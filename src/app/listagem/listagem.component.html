@@ -1,0 +1,31 @@
+<app-root></app-root>
+
+<br/>
+<table class="table table-striped table-sm table-hover">
+<thead>
+    <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Limite crédito</th>
+        <th scope="col">Actions</th>
+    </tr>  
+</thead>  
+    <tr *ngFor="let cliente of listaClientes">
+        <td>{{ cliente.codigo }}</td>
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.limiteCredito }}</td>
+        <td><button class="btn btn-alert" (click)="goDetail()">Detalhar </button>  
+            <button class="btn btn-alert" (click)="delete()"> Remover</button>
+        </td>
+
+    </tr>
+</table>
+<br>
+<br>
+<br>
+<button style="float: right;" [routerLink]="['/criar']" routerLinkActive="router-link-active" class="btn btn-primary" >Novo cliente</button>
+<a routerLink="/">Voltar</a>
+
+

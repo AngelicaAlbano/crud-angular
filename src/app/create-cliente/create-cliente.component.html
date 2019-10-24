@@ -1,0 +1,36 @@
+<app-root></app-root>
+
+<h2>Novo cliente</h2>
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<div class="form-group">
+<p>
+    <label for="codigo">Código</label><br />
+    <input type="text" class="input-group-text col-1" formControlName="codigo"/>
+</p>
+<p>
+    <label for="nome">Nome</label><br />
+    <input type="text" class="input-group-text" formControlName="nome"/>
+</p>
+<p>
+    <label for="email">E-mail</label><br />
+    <input type="email" class="input-group-text" formControlName="email"/>
+</p>
+<p>
+    <label for="limite">Limite crédito</label><br />
+    <input type="number" class="input-group-text" formControlName="limiteCredito"/>
+</p>
+    <label for="situacao">Situação</label>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio" formControlName="ativo">Ativo</label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio" formControlName="inativo">Inativo</label>
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary"[disabled]="!formulario.valid">Adicionar</button>&nbsp;
+    <button type="reset" class="btn btn-danger">Limpar</button>
+</div>
+</form>
